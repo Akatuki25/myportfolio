@@ -1,0 +1,21 @@
+{
+  "name": "Hugo Portfolio",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode/settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "vscode/extensions": [
+      "ms-azuretools.vscode-docker",
+      "shd101wyy.markdown-preview-enhanced"
+    ]
+  },
+  "forwardPorts": [
+    1313
+  ],
+  "postCreateCommand": "hugo version",
+  "remoteUser": "root"
+}

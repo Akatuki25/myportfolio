@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <div class="section-header">
+    <h1>{{ .Title }}</h1>
+    <p>{{ with .Description }}{{ . }}{{ else }}{{ .Section | humanize }}の一覧です{{ end }}</p>
+  </div>
+
+  <div class="grid-layout">
+    {{ range .Pages }}
+      <div class="content-card">
+        <a href="{{ .RelPermalink }}">
+          {{ if .Params.thumbnail }}
+            <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+          {{ else }}
+            <img src="/images/default-thumbnail.jpg" alt="{{ .Title }}">
+          {{ end }}
+          <h2>{{ .Title }}</h2>
+          <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
+          <div class="card-footer">
+            <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+            <span class="read-more">続きを読む →</span>
+          </div>
+        </a>
+      </div>
+    {{ else }}
+      <p>現在、コンテンツがありません。</p>
+    {{ end }}
+  </div>
+{{ end }}

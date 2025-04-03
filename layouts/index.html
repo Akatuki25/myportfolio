@@ -1,0 +1,89 @@
+{{ define "main" }}
+  <div class="home-header">
+    <h1>{{ .Title }}</h1>
+    <div class="home-content">
+      {{ .Content }}
+    </div>
+  </div>
+
+  <!-- 最新の記事 -->
+  <section class="home-section">
+    <div class="section-header">
+      <h2>最新の記事</h2>
+      <a href="/articles/" class="section-link">すべての記事を見る →</a>
+    </div>
+    <div class="grid-layout">
+      {{ range first 3 (where .Site.RegularPages "Section" "articles") }}
+        <div class="content-card">
+          <a href="{{ .RelPermalink }}">
+            {{ if .Params.thumbnail }}
+              <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+            {{ else }}
+              <img src="/images/default-thumbnail.jpg" alt="{{ .Title }}">
+            {{ end }}
+            <h2>{{ .Title }}</h2>
+            <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
+            <div class="card-footer">
+              <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+              <span class="read-more">続きを読む →</span>
+            </div>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- 実績 -->
+  <section class="home-section">
+    <div class="section-header">
+      <h2>実績</h2>
+      <a href="/achievements/" class="section-link">すべての実績を見る →</a>
+    </div>
+    <div class="grid-layout">
+      {{ range first 3 (where .Site.RegularPages "Section" "achievements") }}
+        <div class="content-card">
+          <a href="{{ .RelPermalink }}">
+            {{ if .Params.thumbnail }}
+              <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+            {{ else }}
+              <img src="/images/default-thumbnail.jpg" alt="{{ .Title }}">
+            {{ end }}
+            <h2>{{ .Title }}</h2>
+            <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
+            <div class="card-footer">
+              <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+              <span class="read-more">詳細を見る →</span>
+            </div>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- 制作物 -->
+  <section class="home-section">
+    <div class="section-header">
+      <h2>制作物</h2>
+      <a href="/projects/" class="section-link">すべての制作物を見る →</a>
+    </div>
+    <div class="grid-layout">
+      {{ range first 3 (where .Site.RegularPages "Section" "projects") }}
+        <div class="content-card">
+          <a href="{{ .RelPermalink }}">
+            {{ if .Params.thumbnail }}
+              <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+            {{ else }}
+              <img src="/images/default-thumbnail.jpg" alt="{{ .Title }}">
+            {{ end }}
+            <h2>{{ .Title }}</h2>
+            <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
+            <div class="card-footer">
+              <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+              <span class="read-more">詳細を見る →</span>
+            </div>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }} 

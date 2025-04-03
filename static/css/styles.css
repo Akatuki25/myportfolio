@@ -1,0 +1,664 @@
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* コンテナの基本設定 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ヘッダー */
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .header-wrapper {
+  display: flex;
+  justify-content: space-between; /* 左右に配置 */
+  align-items: center; /* 垂直方向を中央揃え */
+}
+
+.site-title-link {
+  text-decoration: none;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.site-nav li {
+  margin: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.site-nav a:hover {
+  color: #3498db;
+}
+
+.site-nav a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #3498db;
+  transition: width 0.3s;
+}
+
+.site-nav a:hover:after {
+  width: 100%;
+}
+
+.site-nav a.active {
+  color: #3498db;
+}
+
+.site-nav a.active:after {
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  margin-left: 1.5rem;
+}
+
+.social-links a {
+  margin-left: 0.75rem;
+  color: #555;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #3498db;
+}
+
+/* SNSアイコン */
+.fa-brands {
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+/* メインレイアウト */
+.layout {
+  display: block;
+  margin: 30px 0;
+}
+
+.content {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 25px;
+}
+
+/* コンテンツカード */
+.content-card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.content-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.content-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.content-card h2 {
+  padding: 15px 15px 5px;
+  font-size: 1.2em;
+  color: #2c3e50;
+}
+
+.content-card p {
+  padding: 0 15px 15px;
+  color: #666;
+}
+
+.content-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px 15px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.content-card .read-more {
+  color: #3498db;
+  font-weight: 500;
+}
+
+.section-header {
+  margin-bottom: 25px;
+}
+
+.section-header h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: #666;
+}
+
+/* サイドバー */
+.site-sidebar {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.site-sidebar h2 {
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  display: block;
+  border: 3px solid #f1f1f1;
+}
+
+.profile-content {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.profile-content h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.profile-description {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.profile-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn-profile {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+.btn-profile:hover {
+  background-color: #2980b9;
+}
+
+.sidebar-nav {
+  list-style: none;
+}
+
+.sidebar-nav li {
+  margin-bottom: 8px;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: #555;
+  display: block;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+.sidebar-nav a:hover {
+  color: #3498db;
+}
+
+.sidebar-posts {
+  list-style: none;
+}
+
+.sidebar-posts li {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 12px;
+}
+
+.sidebar-posts li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sidebar-posts a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.post-date {
+  font-size: 0.8em;
+  color: #999;
+  margin-bottom: 3px;
+}
+
+.post-title {
+  color: #333;
+  transition: color 0.3s;
+}
+
+.sidebar-posts a:hover .post-title {
+  color: #3498db;
+}
+
+/* フッター */
+.site-footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 25px 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.site-footer a {
+  color: #3498db;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  color: #ecf0f1;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-section h3:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background-color: #3498db;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ecf0f1;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #3498db;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin-right: 15px;
+  text-decoration: none;
+  color: #ecf0f1;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #3498db;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  color: #bdc3c7;
+  font-size: 0.9em;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* レスポンシブ対応 */
+@media (min-width: 768px) {
+  .layout {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .content {
+    flex: 3;
+  }
+  
+  .site-sidebar {
+    flex: 1;
+    margin: 0;
+  }
+  
+  .site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .site-title {
+    margin-bottom: 0;
+  }
+}
+
+/* グリッドレイアウト */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.site-title-link {
+  text-decoration: none;
+}
+
+.site-nav a.active {
+  color: #3498db;
+}
+
+.site-nav a.active:after {
+  width: 100%;
+}
+
+/* ホームページ */
+.home-header {
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+.home-content {
+  margin-top: 15px;
+  line-height: 1.8;
+}
+
+.home-section {
+  margin-bottom: 40px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.section-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.section-link:hover {
+  color: #2980b9;
+}
+
+/* シングルページスタイル */
+.single-post {
+  padding: 20px 0;
+}
+
+.post-header {
+  margin-bottom: 30px;
+}
+
+.post-header h1 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 2em;
+}
+
+.post-meta {
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.post-date {
+  margin-right: 15px;
+}
+
+.post-categories a {
+  display: inline-block;
+  color: #3498db;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.post-thumbnail {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.post-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.post-thumbnail img:hover {
+  transform: scale(1.02);
+}
+
+.post-content {
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.post-content h2 {
+  margin: 30px 0 15px;
+  color: #2c3e50;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 10px;
+}
+
+.post-content h3 {
+  margin: 25px 0 15px;
+  color: #2c3e50;
+}
+
+.post-content p {
+  margin-bottom: 15px;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+.post-content ul, .post-content ol {
+  margin: 0 0 15px 20px;
+}
+
+.post-content li {
+  margin-bottom: 5px;
+}
+
+.post-content blockquote {
+  border-left: 4px solid #3498db;
+  padding: 10px 20px;
+  margin: 20px 0;
+  background-color: #f8f9fa;
+  color: #555;
+  font-style: italic;
+}
+
+.post-content code {
+  background-color: #f1f1f1;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.post-content pre {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.post-tags {
+  margin: 30px 0;
+  font-size: 0.9em;
+}
+
+.post-tags a {
+  display: inline-block;
+  background-color: #f1f1f1;
+  color: #666;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.post-tags a:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f1f1;
+}
+
+.prev-post, .next-post {
+  text-decoration: none;
+  color: #3498db;
+  transition: color 0.3s;
+  max-width: 45%;
+}
+
+.prev-post:hover, .next-post:hover {
+  color: #2980b9;
+}
+
+.next-post {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .post-navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .prev-post, .next-post {
+    max-width: 100%;
+  }
+  
+  .next-post {
+    text-align: left;
+  }
+}

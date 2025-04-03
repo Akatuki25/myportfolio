@@ -1,0 +1,29 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-wrapper">
+      <!-- タイトルを左寄せ -->
+      <a href="/" class="site-title-link">
+        <h1 class="site-title">あかつきtimes</h1>
+      </a>
+      <!-- ナビゲーションとソーシャルリンクを右寄せ -->
+      <div class="header-right">
+        <nav class="site-nav">
+          <ul>
+            <li><a href="/" class="{{ if .IsHome }}active{{ end }}">トップ</a></li>
+            <li><a href="/articles/" class="{{ if eq .Section "articles" }}active{{ end }}">記事</a></li>
+            <li><a href="/achievements/" class="{{ if eq .Section "achievements" }}active{{ end }}">実績</a></li>
+            <li><a href="/projects/" class="{{ if eq .Section "projects" }}active{{ end }}">制作物</a></li>
+          </ul>
+        </nav>
+        <div class="social-links">
+          <a href="https://x.com/akatuki253" target="_blank" aria-label="Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://github.com/Akatuki25" target="_blank" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

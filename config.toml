@@ -1,0 +1,6 @@
+baseURL = "http://localhost:1313"
+languageCode = "ja"
+title = "my portfolio site"
+theme = "テーマ"
+[params]
+  author = "あかつき"

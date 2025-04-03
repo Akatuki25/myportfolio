@@ -1,0 +1,40 @@
+<aside class="site-sidebar">
+  <div class="sidebar-profile">
+    <h2>My Profile</h2>
+    <div class="profile-content">
+      <img src="/images/profile.jpg" alt="プロフィール画像" class="profile-image">
+      <h3>あかつき</h3>
+      <p>学生エンジニア！！！</p>
+      <p class="profile-description">ハッカソンとかカンファレンスとか好きです、誘ってください。</p>
+    </div>
+    <div class="profile-links">
+      <a href="/about/" class="btn-profile">詳細プロフィール</a>
+      <a href="/contact/" class="btn-profile">お問い合わせ</a>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <h2>カテゴリー</h2>
+    <ul class="sidebar-nav">
+      <li><a href="/articles/">記事一覧</a></li>
+      <li><a href="/achievements/">実績一覧</a></li>
+      <li><a href="/projects/">制作物一覧</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-section">
+    <h2>最新の記事</h2>
+    <ul class="sidebar-posts">
+      {{ range first 5 (where .Site.RegularPages "Section" "articles") }}
+        <li>
+          <a href="{{ .RelPermalink }}">
+            <div class="post-date">{{ .Date.Format "2006-01-02" }}</div>
+            <div class="post-title">{{ .Title }}</div>
+          </a>
+        </li>
+      {{ else }}
+        <li>記事がありません</li>
+      {{ end }}
+    </ul>
+  </div>
+</aside>
