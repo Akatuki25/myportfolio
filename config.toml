@@ -1,6 +1,6 @@
-baseURL = "http://localhost:1313"
+baseURL = "https://Akatuki25.github.io/"
 languageCode = "ja"
-title = "my portfolio site"
+title = "あかつきtimes"
 theme = "テーマ"
 [params]
   author = "あかつき"
